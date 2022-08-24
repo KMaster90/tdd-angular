@@ -1,4 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Observable, of} from "rxjs";
+import {DataService} from "../../services/data.service";
+
+export interface Home {
+  title: string;
+  image: string;
+  location: string;
+}
 
 @Component({
   selector: 'app-homes',
@@ -7,9 +15,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomesComponent implements OnInit {
 
-  constructor() { }
+  homes$: Observable<Home[]>
+
+  constructor(private dataService:DataService) {
+    this.homes$ = this.dataService.getHomes$();
+  }
 
   ngOnInit(): void {
+
+
   }
 
 }

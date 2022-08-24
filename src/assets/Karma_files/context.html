@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)http://localhost:9876/context.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <!--<base href="/">--><base href=".">
+    
+    <link rel="stylesheet" href="./styles.css" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  </head>
+
+  <body>
+    <!-- The scripts need to be in the body DOM element, as some test running frameworks need the body
+       to have already been created so they can insert their magic into it. For example, if loaded
+       before body, Angular Scenario test framework fails to find the body and crashes and burns in
+       an epic manner. -->
+    <script src="./context.js"></script>
+    <script type="text/javascript">
+      // Configure our Karma and set up bindings
+      window.__karma__.config = {"args":[],"useIframe":true,"runInParent":false,"captureConsole":true,"clearContext":false,"allowedReturnUrlPatterns":["^https?://"],"jasmine":{},"originalArgs":[]};
+
+        window.__karma__.setupContext(window);
+
+      // All served files with the latest timestamps
+      window.__karma__.files = {
+  '/base/node_modules/source-map-support/browser-source-map-support.js': 'd396c5c772d39dd251c37919a75f287e2244d0a2',
+  '/base/node_modules/karma-source-map-support/lib/client.js': 'fcb459e84379f1ce8e91fe200d87463f3780ca1b',
+  '/base/node_modules/jasmine-core/lib/jasmine-core/jasmine.js': '9e8bf4ff78544afe6d14cf3d10c6d3a04d389d82',
+  '/base/node_modules/karma-jasmine/lib/boot.js': '760d54bbca4f739f1f8b252c1636d76201cc4e88',
+  '/base/node_modules/karma-jasmine/lib/adapter.js': '819d052a6ccda48ccf69c2b6105ab3ea2072ae50',
+  '/base/node_modules/karma-jasmine-html-reporter/src/css/jasmine.css': '3d18d846070bb4b7c5b23ab3e3e00086ad1d7ccd',
+  '/base/node_modules/karma-jasmine-html-reporter/src/lib/html.jasmine.reporter.js': 'bddb5700aa1b792e865c30f13e3bcb12d20e0ede',
+  '/base/node_modules/karma-jasmine-html-reporter/src/lib/adapter.js': '57d0419040e918dc02359fd376fd736983bbf6fc'
+};
+
+    </script>
+    <script src="./runtime.js" crossorigin="anonymous"></script>
+    <script src="./polyfills.js" crossorigin="anonymous"></script>
+    <!-- Dynamically replaced with <script> tags -->
+    <script type="text/javascript" src="./browser-source-map-support.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./client.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./jasmine.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./boot.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./adapter.js" crossorigin="anonymous"></script>
+<link type="text/css" href="./jasmine.css" rel="stylesheet">
+<script type="text/javascript" src="./html.jasmine.reporter.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="./adapter(1).js" crossorigin="anonymous"></script><div class="jasmine_html-reporter"><div class="jasmine-banner"><a class="jasmine-title" href="http://jasmine.github.io/" target="_blank"></a><span class="jasmine-version">4.1.1</span></div><ul class="jasmine-symbol-summary"><li class="jasmine-passed" id="spec_spec1" title="AppComponent should have as title &#39;tdd&#39;"></li><li class="jasmine-passed" id="spec_spec0" title="AppComponent should create the app"></li><li class="jasmine-passed" id="spec_spec5" title="HeaderComponent should show menu"></li><li class="jasmine-passed" id="spec_spec6" title="HeaderComponent should show home-type"></li></ul><div class="jasmine-alert"></div><div class="jasmine-results"><div class="jasmine-failures"></div></div></div>
+    <script src="./scripts.js" crossorigin="anonymous"></script>
+    <script src="./vendor.js" crossorigin="anonymous"></script>
+    <script src="./main.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      window.__karma__.loaded();
+    </script>
+  
+
+</body></html>
