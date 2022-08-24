@@ -1,0 +1,24 @@
+version: '3'
+services:
+  web:
+    image: kmaster90/tdd
+    container_name: tdd-container
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "80:4200"
+    volumes:
+      - /app/node_modules
+      - .:/app
+  test:
+    image: kmaster90/tdd-tests
+    container_name: tdd-container-test
+    build:
+      context: .
+      dockerfile: Dockerfile.tests
+    ports:
+      - "9876"
+    volumes:
+      - /app/node_modules
+      - .:/app
