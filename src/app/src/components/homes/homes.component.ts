@@ -38,7 +38,7 @@ export class HomesComponent implements OnInit {
 
   openDialog({title, image, location, price}:IHome) {
     this.dialogService.open(BookComponent, {
-      width: 'px',
+      width: '500px',
       data: {
         title,
         image,

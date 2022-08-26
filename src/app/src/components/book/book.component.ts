@@ -35,7 +35,7 @@ export class BookComponent implements OnInit {
     const daysDiff = (new Date(checkOut).getTime() - new Date(checkIn).getTime()) / (1000 * 3600 * 24);
     // Multiply the number of nights by the price per night to get the total price
     // console.log(daysDiff);
-    return daysDiff * +this.data.price;
+    return daysDiff>0?'$'+(daysDiff * +this.data.price): '--';
   }
 
   bookHome$() {

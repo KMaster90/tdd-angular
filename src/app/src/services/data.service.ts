@@ -16,7 +16,7 @@ export class DataService {
     return this.httpClient.get<Home[]>('assets/homes.json');
   }
 
-  bookHome$(checkIn:string,checkOut:string,total:number){
+  bookHome$(checkIn:string,checkOut:string,total:string){
     console.log('called')
     return this.httpClient.post<any>('https://run.mocky.io/v3/910846ae-634e-4e95-9743-3df906a4b518',{checkIn,checkOut,total});
   }

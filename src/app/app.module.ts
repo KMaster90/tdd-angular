@@ -11,6 +11,10 @@ import {MatDialogModule} from "@angular/material/dialog";
 import { BookComponent } from './src/components/book/book.component';
 import {FormsModule} from "@angular/forms";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatInputModule} from "@angular/material/input";
+import {MatNativeDateModule} from "@angular/material/core";
 
 @NgModule({
   declarations: [
@@ -19,15 +23,19 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     HomesComponent,
     BookComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        BrowserAnimationsModule,
-        MatDialogModule,
-        FormsModule,
-        MatSnackBarModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    FormsModule,
+    MatSnackBarModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatNativeDateModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

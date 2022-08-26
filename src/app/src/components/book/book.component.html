@@ -1,13 +1,25 @@
-<div data-test="title">Book {{data.title}}</div>
-<div data-test="price">${{data.price}} per night</div>
+<div data-test="title" mat-dialog-title>Book {{data.title}}</div>
+<div data-test="price" class="uk-margin"><span class="uk-text-large uk-text-bold uk-text-primary">${{data.price}}</span> per night</div>
 <div data-test="check_in_date">
-  <input type="text" [(ngModel)]="checkIn">
+  <mat-form-field appearance="fill">
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="checkInPicker" [(ngModel)]="checkIn">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matSuffix [for]="checkInPicker"></mat-datepicker-toggle>
+    <mat-datepicker #checkInPicker></mat-datepicker>
+  </mat-form-field>
 </div>
 <div data-test="check_out_date">
-  <input type="text" [(ngModel)]="checkOut">
+  <mat-form-field appearance="fill">
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="checkOutPicker" [(ngModel)]="checkOut">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matSuffix [for]="checkOutPicker"></mat-datepicker-toggle>
+    <mat-datepicker #checkOutPicker></mat-datepicker>
+  </mat-form-field>
 </div>
-<div data-test="total">Total ${{checkIn && checkOut && calculateTotal(checkIn, checkOut)}}</div>
-<div data-test="book_btn">
-  <button (click)="bookHome$()">Book Now</button>
+<div data-test="total" class="uk-text-bold uk-margin">Total: <span>{{calculateTotal(checkIn, checkOut)}}</span></div>
+<div data-test="book_btn" class="uk-margin">
+  <button (click)="bookHome$()" class="uk-button uk-button-primary uk-button-large uk-width-1-1@s">Book Now</button>
 </div>
 

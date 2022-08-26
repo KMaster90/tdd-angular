@@ -60,7 +60,13 @@ describe('BookComponent', () => {
     // user filled all fields
     userInsertedAllFields();
     // assert that the total shows 3*100 = 300
-    expect(el('total')?.textContent).toContain('Total $300');
+    expect(el('total')?.textContent).toContain('Total: $300');
+  });
+  it('should show -- when dates are invalid', () => {
+    // user filled all fields
+    userInsertedAllFields('12/12/12', '12/11/12');
+    // assert that the total shows 3*100 = 300
+    expect(el('total')?.textContent).toContain('Total: --');
   });
 // should book home after clicking the Book button (Book Now)
   it('should book home after clicking the Book button', () => {
@@ -74,7 +80,7 @@ describe('BookComponent', () => {
     expect(dataService.bookHome$).toHaveBeenCalled()
   });
 
-// TODO -  should close the dialog and show notification after clicking the Book button (Book Now)
+// should close the dialog and show notification after clicking the Book button (Book Now)
   it('should close the dialog and show notification after clicking the Book button', waitForAsync(() => {
     dataService = TestBed.inject(DataService) as jasmine.SpyObj<DataService>;
     matDialogRef = TestBed.inject(MatDialogRef) as jasmine.SpyObj<MatDialogRef<BookComponent>>;
@@ -92,14 +98,14 @@ describe('BookComponent', () => {
   // Unit
   it('ts ', () => expect(component.num()).toEqual(1));
 
-  const userInsertedAllFields = () => {
+  const userInsertedAllFields = (checkInValue = '12/20/19',checkOutValue = '12/23/19') => {
     // users enters check in date: 12/20/19
     const checkIn = el('check_in_date input') as HTMLInputElement;
-    checkIn.value = '12/20/19';
+    checkIn.value = checkInValue;
     checkIn.dispatchEvent(new Event('input'));
     // users enters check out date: 12/23/19
     const checkOut = el('check_out_date input') as HTMLInputElement;
-    checkOut.value = '12/23/19';
+    checkOut.value = checkOutValue;
     checkOut.dispatchEvent(new Event('input'));
 
     fixture.detectChanges()
