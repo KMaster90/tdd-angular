@@ -17,7 +17,11 @@ declare const require: {
 export type Selector = `[data-test="${string}"]`;
 export type QuerySelector = (selectorName:string,element:Element)=>HTMLElement|null;
 export type El = (selectorName:string) => HTMLElement|null;
-export const querySelector:QuerySelector = (selectorName,element)=> element.querySelector(`[data-test="${selectorName}"]`);
+export const querySelector:QuerySelector = (selectorName,element)=> {
+  const [data_test,...selectors] = selectorName.split(' ');
+  const selector = selectors.join(' ');
+  return element.querySelector(`[data-test="${data_test}"] ${selector}`);
+};
 
 
 

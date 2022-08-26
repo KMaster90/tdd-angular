@@ -7,7 +7,6 @@ import {IHome} from "../components/homes/homes.component";
   providedIn: 'root'
 })
 export class DialogService {
-
   constructor(private dialog:MatDialog) { }
 
   open(component:ComponentType<any>, info:MatDialogConfig<IHome>){

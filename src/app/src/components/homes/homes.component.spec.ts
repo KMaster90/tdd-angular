@@ -79,7 +79,7 @@ describe('HomesComponent', () => {
       });
   it('should use dialog service to open a dialog when clicking on Book button', () => {
     // grab the button to click
-        const bookBtn = fixture.nativeElement.querySelector('[data-test="home"] button');
+        const bookBtn = el('home button') as HTMLButtonElement;
     // click the button
         bookBtn.click();
     // assert that the dialog service was used to open a dialog

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Observable, of} from "rxjs";
+import {first, Observable} from "rxjs";
 import {DataService} from "../../services/data.service";
 import {DialogService} from "../../services/dialog.service";
 import {BookComponent} from "../book/book.component";
@@ -36,9 +36,9 @@ export class HomesComponent implements OnInit {
     this.homes$ = this.dataService.getHomes$();
   }
 
-  openDialog({title, image, location, price}:IHome){
+  openDialog({title, image, location, price}:IHome) {
     this.dialogService.open(BookComponent, {
-      width:'px',
+      width: 'px',
       data: {
         title,
         image,
@@ -47,5 +47,6 @@ export class HomesComponent implements OnInit {
       }
     });
   }
+
 
 }
